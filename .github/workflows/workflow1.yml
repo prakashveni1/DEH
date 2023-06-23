@@ -1,6 +1,8 @@
+name: workflow
+
 on:
   workflow_run:
-    workflows: ["callerworkflow"]
+    workflows: ["callerworkflow.yml"]
     types:
       - completed      
 jobs:
