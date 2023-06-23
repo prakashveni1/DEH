@@ -1,14 +1,34 @@
-name: workflow
+name: Multi-Workflow
 
 on:
-  workflow_run:
-    workflows: ["callerworkflow.yml"]
-    types:
-      - completed      
-jobs:
-   build:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
+  workflow_dispatch:
+    inputs:
+      workflow_run:
+        description: 'Choose the workflow run'
+        required: true
+        default: 'callerworkflow'
 
+jobs:
+  run-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run workflow
+        run: |
+          case ${{ github.event.inputs.workflow_run }} in
+          callerworkflow)
+            echo "Running Workflow 1"
+            # Add steps specific to Workflow 1
+            ;;
+          subworkflow)
+            echo "Running Workflow 2"
+            # Add steps specific to Workflow 2
+            ;;
+          *)
+            echo "Invalid workflow run specified"
+            exit 1
+            ;;
+          esac
