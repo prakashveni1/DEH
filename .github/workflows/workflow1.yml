@@ -1,0 +1,6 @@
+on:
+  workflow_run:
+    workflows: ["callerworkflow"]
+    types:
+      - completed
+
