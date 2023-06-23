@@ -1,4 +1,4 @@
-name: SubWorkflow
+name: Sub Workflow
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
 
       # Your sub workflow steps go here
 
-      - name: Trigger MainWorkflow
+      - name: Trigger Main Workflow
         uses: actions/github-script@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
