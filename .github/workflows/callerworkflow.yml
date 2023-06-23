@@ -6,7 +6,6 @@ on:
       calledworkflow_name:
          description: 'called workflow for triggering'
          required: true
-         default: 'subworkflow'
       choice:
         type: choice
         description: Make a choice
