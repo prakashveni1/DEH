@@ -1,10 +1,6 @@
 name: GitHub Actions Multiple YAMLs Example
 
-on:
-  push:
-    branches:
-      - main
-      
+on:   
   workflow_dispatch:
    inputs:
       selectedYaml:
@@ -17,10 +13,10 @@ jobs:
     steps:
       - name: Run Selected YAMLs
         run: |
-          if [ ${{ github.event.inputs.selectedYaml }} == 'CalledWorkflow' ]; then
+          if [ ${{ github.event.inputs.selectedYaml }} == 'callerworkflow.yml' ]; then
             echo "Running all YAML files"
             # Add steps to run all YAML files
-          elif [ ${{ github.event.inputs.selectedYaml }} == 'SubWorkflow' ]; then
+          elif [ ${{ github.event.inputs.selectedYaml }} == 'subworkflow.yml' ]; then
             echo "Running YAML 1"
             # Add steps to run YAML 1
           else
