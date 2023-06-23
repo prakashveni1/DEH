@@ -1,4 +1,4 @@
-name: Sub Workflow
+name: SubWorkflow
 
 on:
   push:
