@@ -1,0 +1,31 @@
+name: CalledWorkflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      calledworkflow_name:
+         description: 'called workflow for triggering'
+         required: true
+         default: 'CalledWorkflow'
+         
+      calledworkflow_github_account:
+         description: 'Github account Owener'
+         required: true
+         default: 'prakashveni1'
+         
+      calledworkflow_repo_account:   
+         description: 'Github Repository Name'
+         required: true
+         default: 'SubWorkflow'
+         
+jobs:
+   build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+    
+    
+         
+         
+  
