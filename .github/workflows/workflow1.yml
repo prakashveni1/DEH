@@ -6,7 +6,7 @@ on:
       workflow_run:
         description: 'Choose the workflow run'
         required: true
-        default: 'callerworkflow'
+        default: 'callerworkflow.yml'
 
 jobs:
   run-workflow:
@@ -19,13 +19,17 @@ jobs:
       - name: Run workflow
         run: |
           case ${{ github.event.inputs.workflow_run }} in
-          callerworkflow)
+          callerworkflow.yml)
             echo "Running Workflow 1"
             # Add steps specific to Workflow 1
             ;;
-          subworkflow)
+          subworkflow.yml)
             echo "Running Workflow 2"
             # Add steps specific to Workflow 2
+            ;;
+           subworkflow2.yml)
+            echo "Running Workflow 3"
+            # Add steps specific to Workflow 3
             ;;
           *)
             echo "Invalid workflow run specified"
