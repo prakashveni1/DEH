@@ -1,4 +1,4 @@
-name: CalledWorkflow
+name: callerworkflow
 
 on:
   workflow_dispatch:
