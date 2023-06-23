@@ -1,8 +1,8 @@
-name: Main Workflow
+name: MainWorkflow
 
 on:
   workflow_run:
-    workflows: ["Sub Workflow"]
+    workflows: ["subworkflow.yml"]
     types:
       - requested
 
