@@ -6,10 +6,6 @@ on:
       selectedYaml:
         description: 'Selected YAML files to run'
         required: true
-      
-          if [ ${{ github.event.inputs.selectedYaml }} == 'CalledWorkflow' ]; then
-            echo "Running  CalledWorkflow files"
-            # Add steps to run all YAML files
 
 jobs:
   build:
@@ -17,10 +13,10 @@ jobs:
     steps:
       - name: Run Selected YAMLs
         run: |
-          if [ ${{ github.event.inputs.selectedYaml }} == 'CalledWorkflow' ]; then
+          if [ ${{ github.event.inputs.selectedYaml }} == 'callerworkflow' ]; then
             echo "Running  CalledWorkflow files"
             # Add steps to run all YAML files
-          elif [ ${{ github.event.inputs.selectedYaml }} == 'SubWorkflow' ]; then
+          elif [ ${{ github.event.inputs.selectedYaml }} == 'subworkflow' ]; then
             echo "Running SubWorkflow"
             # Add steps to run SubWorkflow
           else
