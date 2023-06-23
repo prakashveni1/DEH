@@ -6,12 +6,7 @@ on:
       calledworkflow_name:
          description: 'called workflow for triggering'
          required: true
-      choice:
-        type: choice
-        description: Make a choice
-        options:
-          - subworkflow
-          - subworkflow2
+         default: subworkflow , subworkflow2
          
       calledworkflow_github_account:
          description: 'Github account Owener'
