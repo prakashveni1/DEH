@@ -15,5 +15,5 @@ jobs:
 
       - name: Run Workflow B
         uses: ./.github/workflows/workflow-b
-        with:
-          checkbox-param: ${{ github.event.inputs.checkbox-param }}
+  #      with:
+   #        checkbox-param: ${{ github.event.inputs.checkbox-param }}
