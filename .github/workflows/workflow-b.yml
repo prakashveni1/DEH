@@ -1,0 +1,22 @@
+name: Workflow B
+
+on:
+  workflow_run:
+    workflows:
+      - "Workflow A"
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set checkbox parameter
+        run: echo "checkbox-param=true" >> $GITHUB_ENV
+
+      - name: Run Workflow A
+        uses: ./.github/workflows/workflow-a
