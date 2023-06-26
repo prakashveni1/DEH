@@ -15,8 +15,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set checkbox parameter
-        run: echo "checkbox-param=true" >> $GITHUB_ENV
+ #     - name: Set checkbox parameter
+ #        run: echo "checkbox-param=true" >> $GITHUB_ENV
 
       - name: Run Workflow A
         uses: ./.github/workflows/workflow-a
