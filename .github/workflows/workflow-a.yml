@@ -14,6 +14,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Workflow B
-        uses: ././.github/workflows/workflow-b
+        uses: ./.github/workflows/workflow-b
         with:
           checkbox-param: ${{ github.event.inputs.checkbox-param }}
