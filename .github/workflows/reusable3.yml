@@ -6,12 +6,3 @@ on:
 jobs:
   call-another-reusable:
     uses: octo-org/example-repo/.github/workflows/another-reusable.yml@v1
-    
-  workflowA-calls-workflowB:
-    uses: octo-org/example-repo/.github/workflows/B.yml@main
-    secrets: inherit # pass all secrets
-  
-  workflowB-calls-workflowC:
-    uses: different-org/example-repo/.github/workflows/C.yml@main
-    secrets:
-      envPAT: ${{ secrets.envPAT }} # pass just this secret
