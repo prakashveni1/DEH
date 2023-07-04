@@ -8,10 +8,9 @@ on:
          required: true
          default: subworkflow
          
-      strategy:
-      matrix:
-       choice: [subworkflow, subworkflow2]  # Available choices
-       options:
+      choice:
+        type: choice
+        options:
           - subworkflow
           - subworkflow2
          
