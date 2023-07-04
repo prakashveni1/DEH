@@ -1,0 +1,35 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+        
+jobs:
+  ReuseableMatrixJobForDeployment:
+    strategy:
+      matrix:
+        target: [dev, stage, prod]
+    uses: octocat/octo-repo/.github/workflows/deployment.yml@main
+    with:
+      target: ${{ matrix.target }}
+      
+  call-workflow-1-in-local-repo:
+    uses: octo-org/this-repo/.github/workflows/workflow-1.yml@172239021f7ba04fe7327647b213799853a9eb89
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/workflow-2.yml
+  call-workflow-in-another-repo:
+    uses: octo-org/another-repo/.github/workflows/workflow.yml@v1
+  call-workflow-passing-data:
+    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+    with:
+      config-path: .github/labeler.yml
+    secrets:
+      envPAT: ${{ secrets.envPAT }}
+      
+      
