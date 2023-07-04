@@ -10,6 +10,8 @@ on:
         required: false
 
 jobs:
+  call-another-reusable:
+    uses: octo-org/example-repo/.github/workflows/reusable1.yml@v1
   my_job:
     runs-on: ubuntu-latest
     steps:
