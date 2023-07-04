@@ -24,11 +24,11 @@ jobs:
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/workflow-2.yml
   call-workflow-in-another-repo:
-    uses: octo-org/another-repo/.github/workflows/reusable1.yml@v1
+    uses: octo-org/another-repo/.github/workflows/reusable.yml@v1
   call-workflow-passing-data:
     uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
     with:
-      config-path: .github/labeler.yml
+      config-path: .github/workflows/resuable1.yml
     secrets:
       envPAT: ${{ secrets.envPAT }}
       
