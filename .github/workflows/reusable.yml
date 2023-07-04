@@ -1,0 +1,20 @@
+name: Reusable Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      param1:
+        description: 'workflow 1 description'
+        required: true
+      param2:
+        description: 'workflow 2 description'
+        required: false
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Running Step 1"
+
+      - name: Step 2
+        run: echo "Running Step 2"
