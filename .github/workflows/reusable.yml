@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       param1:
-        description: 'workflow 1 description'
+        description: 'Workflow A description'
         required: true
       param2:
-        description: 'workflow 2 description'
+        description: 'Workflow A description'
         required: false
 
 jobs:
