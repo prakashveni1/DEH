@@ -1,5 +1,4 @@
 name: Multi-Workflow
-
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +6,6 @@ on:
         description: 'Choose the workflow run'
         required: true
         default: 'callerworkflow.yml'
-
 jobs:
   run-workflow:
     runs-on: ubuntu-latest
